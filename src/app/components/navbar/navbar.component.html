@@ -1,0 +1,51 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled()" id="navbar">
+  <div class="navbar__inner container">
+    <!-- Logo -->
+    <a class="navbar__logo" (click)="scrollTo('hero')" role="button" tabindex="0">
+      MarcosDias<span class="navbar__logo-accent">.Dev</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="navbar__links">
+      <li *ngFor="let link of navLinks" class="navbar__link-item">
+        <a (click)="scrollTo(link.fragment)" role="button" tabindex="0">{{ link.label }}</a>
+      </li>
+    </ul>
+
+    <!-- CTA Button -->
+    <a class="navbar__cta btn btn--primary" href="https://www.linkedin.com/in/marcos-d-756956103/" target="_blank">
+      CONECTAR
+    </a>
+
+    <!-- Hamburger Button (mobile) -->
+    <button
+      class="navbar__hamburger"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="navbar__drawer" [class.navbar__drawer--open]="isMobileMenuOpen()">
+    <ul class="navbar__drawer-links">
+      <li *ngFor="let link of navLinks" class="navbar__drawer-item">
+        <a (click)="scrollTo(link.fragment)" role="button" tabindex="0">{{ link.label }}</a>
+      </li>
+      <li class="navbar__drawer-item">
+        <a class="btn btn--primary" href="https://www.linkedin.com/in/marcos-d-756956103/" target="_blank">CONECTAR</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Backdrop (mobile) -->
+  <div
+    class="navbar__backdrop"
+    [class.navbar__backdrop--visible]="isMobileMenuOpen()"
+    (click)="closeMobileMenu()"
+  ></div>
+</nav>

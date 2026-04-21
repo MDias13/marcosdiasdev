@@ -1,0 +1,66 @@
+<section class="ecosystem section" id="expertise">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section__header" appFadeIn>
+      <h2 class="section__title">
+        STACK DE <span class="accent">DESENVOLVIMENTO</span>
+      </h2>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="ecosystem__grid">
+      <div
+        *ngFor="let card of cards; let i = index"
+        class="ecosystem__card glass-card"
+        appFadeIn
+        [fadeDelay]="i * 150"
+      >
+        <!-- Icon -->
+        <div class="ecosystem__card-icon">
+          <ng-container [ngSwitch]="card.icon">
+            <!-- Angular -->
+            <svg *ngSwitchCase="'angular'" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L6 11.5L9 35L24 44L39 35L42 11.5L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 4L24 44" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+              <path d="M24 8.5L13 33H17.5L19.7 27.5H28.2L30.4 33H35L24 8.5Z" fill="currentColor" opacity="0.8"/>
+              <path d="M20.8 24L24 14.5L27.2 24H20.8Z" fill="var(--color-bg)"/>
+            </svg>
+
+            <!-- NestJS -->
+            <svg *ngSwitchCase="'nestjs'" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6C14.06 6 6 14.06 6 24s8.06 18 18 18 18-8.06 18-18S33.94 6 24 6z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M28 16c-1.5-1-3-1.5-4-1.5s-2.5.5-3 1c-.5.5-.5 1.5 0 2l6 4c1 .7 1.5 2 1.5 3s-.5 2.5-1.5 3.5c-1 1-3 2-5 2s-4-1-5.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="32" cy="14" r="2" fill="currentColor" opacity="0.6"/>
+              <path d="M18 32l-2 4M30 28l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+
+            <!-- Spring -->
+            <svg *ngSwitchCase="'spring'" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M38 10c-2 3-5 5-8 6-3 1-6 3-8 6s-3 7-1 10c2 4 6 6 10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M10 38c2-3 5-5 8-6 3-1 6-3 8-6s3-7 1-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+              <circle cx="36" cy="12" r="2.5" fill="currentColor"/>
+              <circle cx="12" cy="36" r="2.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+
+            <!-- Database -->
+            <svg *ngSwitchCase="'database'" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="24" cy="14" rx="14" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 14v20c0 2.8 6.3 5 14 5s14-2.2 14-5V14" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 24c0 2.8 6.3 5 14 5s14-2.2 14-5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+              <path d="M10 34c0 2.8 6.3 5 14 5s14-2.2 14-5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+            </svg>
+          </ng-container>
+        </div>
+
+        <!-- Badge -->
+        <span class="badge">{{ card.badge }}</span>
+
+        <!-- Title -->
+        <h3 class="ecosystem__card-title">{{ card.title }}</h3>
+
+        <!-- Description -->
+        <p class="ecosystem__card-desc">{{ card.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

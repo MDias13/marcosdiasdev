@@ -1,0 +1,39 @@
+<section class="artifacts section" id="work">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="artifacts__header" appFadeIn>
+      <h2 class="section__title">
+        PROJETOS QUE <span class="accent-italic">PARTICIPEI</span>
+      </h2>
+      <p class="artifacts__subtitle">
+        Contribuições técnicas em sistemas de alto impacto e escala
+      </p>
+    </div>
+
+    <!-- Featured Projects Grid -->
+    <div class="artifacts__grid">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="artifacts__card glass-card"
+        appFadeIn
+        [fadeDelay]="i * 150"
+      >
+        <!-- Project Image -->
+        <div class="artifacts__image-container">
+          <div class="artifacts__image-overlay"></div>
+          <img [src]="project.image || 'assets/images/project-placeholder.jpg'" [alt]="project.title" class="artifacts__image">
+        </div>
+
+        <div class="artifacts__card-content">
+          <span class="eyebrow">{{ project.label }}</span>
+          <h3 class="artifacts__card-title">{{ project.title }}</h3>
+          <p class="artifacts__card-desc">{{ project.description }}</p>
+          
+          <div class="artifacts__tags">
+            <span class="artifacts__tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

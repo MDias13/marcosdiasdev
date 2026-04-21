@@ -1,0 +1,51 @@
+<section class="hero" id="hero">
+  <!-- Radial glow background -->
+  <div class="hero__glow"></div>
+
+  <div class="hero__content container">
+    <!-- Eyebrow label -->
+    <p class="hero__eyebrow" appFadeIn [fadeDelay]="1300">
+      FORTALEZA, CEARÁ
+    </p>
+
+    <!-- Headline -->
+    <h1 class="hero__headline" appFadeIn [fadeDelay]="1500">
+      <span class="hero__headline-white">DESENVOLVEDOR</span>
+      <span class="hero__headline-accent">FULL STACK</span>
+    </h1>
+
+    <!-- Subheadline & Status -->
+    <div class="hero__meta" appFadeIn [fadeDelay]="1700">
+      <div class="hero__status">
+        <span class="hero__status-dot"></span>
+        Engenheiro de Software Full Stack
+      </div>
+      <p class="hero__subheadline">
+        Desenvolvimento de sistemas robustos e escaláveis. Focado em criar soluções que unem
+        <span class="highlight">performance</span>, <span class="highlight">segurança</span> e <span class="highlight">arquitetura</span> de alto nível.
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero__stats" appFadeIn [fadeDelay]="1900">
+      <div class="hero__stat">
+        <span class="hero__stat-number">{{ yearsCount() < 10 ? '0' + yearsCount() : yearsCount() }}+</span>
+        <span class="hero__stat-label">Anos de Experiência</span>
+      </div>
+      <div class="hero__stat-divider"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">{{ projectsCount() < 10 ? '0' + projectsCount() : projectsCount() }}+</span>
+        <span class="hero__stat-label">Projetos Trabalhados</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" appFadeIn [fadeDelay]="2100">
+      <button class="hero__scroll-btn" (click)="scrollTo('expertise')" aria-label="Scroll to content">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

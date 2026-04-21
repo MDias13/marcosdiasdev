@@ -1,0 +1,84 @@
+@use '../../../styles/variables' as *;
+
+// ============================================
+// CONTACT / CTA SECTION
+// ============================================
+.contact {
+  background: var(--color-accent);
+  padding: var(--space-3xl) 0;
+  position: relative;
+  z-index: 1;
+
+  @include md {
+    padding: 7rem 0;
+  }
+
+  &__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  &__headline {
+    font-family: var(--font-display);
+    line-height: 0.95;
+
+    &-top {
+      display: block;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: #000;
+      text-transform: uppercase;
+    }
+
+    &-accent {
+      display: block;
+      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: #000;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  &__subtext {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.65);
+    max-width: 420px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-sm);
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+    margin-top: var(--space-md);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

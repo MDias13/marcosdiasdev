@@ -1,0 +1,29 @@
+<section class="workflow section" id="process" #timelineSection>
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section__header" appFadeIn>
+      <h2 class="section__title">
+        MEU FLUXO DE <span class="accent">TRABALHO</span>
+      </h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="workflow__timeline" [class.workflow__timeline--active]="timelineActive()">
+      <!-- Connector line -->
+      <div class="workflow__connector"></div>
+
+      <!-- Steps -->
+      <div
+        *ngFor="let step of steps; let i = index"
+        class="workflow__step"
+        appFadeIn
+        [fadeDelay]="i * 200"
+      >
+        <div class="workflow__step-number">{{ step.number }}</div>
+        <div class="workflow__step-dot"></div>
+        <h3 class="workflow__step-title">{{ step.title }}</h3>
+        <p class="workflow__step-desc">{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
